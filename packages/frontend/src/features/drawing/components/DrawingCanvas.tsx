@@ -12,6 +12,7 @@ interface DrawingStep {
 interface DrawingCanvasProps {
   steps: DrawingStep[];
   currentStepIndex: number;
+  zoom?: number;
 }
 
 /**
@@ -24,13 +25,17 @@ interface DrawingCanvasProps {
 export const DrawingCanvas: React.FC<DrawingCanvasProps> = ({
   steps,
   currentStepIndex,
+  zoom = 0.5,
 }) => {
   return (
-    <div className="flex-1 w-full flex items-center justify-center p-8 bg-white overflow-hidden">
+    <div className="flex-1 w-full flex items-center justify-center p-8 bg-white overflow-hidden relative">
       <svg
         viewBox="0 0 400 400" // Standard viewBox, should ideally come from template
-        className="w-full h-full max-w-4xl"
-        style={{ filter: 'drop-shadow(0px 4px 10px rgba(0,0,0,0.1))' }}
+        className="w-full h-full max-w-4xl transition-transform duration-300"
+        style={{ 
+          filter: 'drop-shadow(0px 4px 10px rgba(0,0,0,0.1))',
+          transform: `scale(${zoom})`
+        }}
       >
         {steps.map((step, idx) => {
           const actualIndex = step.index !== undefined ? step.index : idx;

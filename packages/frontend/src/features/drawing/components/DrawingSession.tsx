@@ -34,11 +34,13 @@ interface DrawingSessionProps {
 export const DrawingSession: React.FC<DrawingSessionProps> = ({ template, onClose, onNextDrawing }) => {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [isCompleted, setIsCompleted] = useState(false);
+  const [zoom, setZoom] = useState(0.5); // Default 50% dezoom
 
   // Reset completion state if template changes
   React.useEffect(() => {
     setCurrentStepIndex(0);
     setIsCompleted(false);
+    setZoom(0.5); // Reset zoom on new drawing
   }, [template.id]);
 
   // Audio Guidance
@@ -59,6 +61,9 @@ export const DrawingSession: React.FC<DrawingSessionProps> = ({ template, onClos
       // TODO: Dispatch UndoStep command to backend
     }
   };
+
+  const handleZoomIn = () => setZoom(z => Math.min(z + 0.1, 2.0));
+  const handleZoomOut = () => setZoom(z => Math.max(z - 0.1, 0.2));
 
   return (
     <div className="flex flex-col h-screen bg-white relative">
@@ -91,10 +96,20 @@ export const DrawingSession: React.FC<DrawingSessionProps> = ({ template, onClos
       )}
 
       {/* Header with Drawing Name */}
-      <header className="h-16 flex items-center justify-center border-b border-gray-100">
+      <header className="h-16 flex items-center justify-center border-b border-gray-100 relative">
         <h1 className="text-2xl font-bold text-gray-800 uppercase tracking-wide">
           Drawing: {template.name}
         </h1>
+        {/* Zoom Controls */}
+        <div className="absolute right-8 flex items-center space-x-2">
+          <button onClick={handleZoomOut} className="w-10 h-10 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-full font-bold text-xl flex items-center justify-center transition-colors">
+            -
+          </button>
+          <span className="text-gray-600 font-medium w-12 text-center">{Math.round(zoom * 100)}%</span>
+          <button onClick={handleZoomIn} className="w-10 h-10 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-full font-bold text-xl flex items-center justify-center transition-colors">
+            +
+          </button>
+        </div>
       </header>
 
       {/* Main Drawing Area */}
@@ -108,6 +123,7 @@ export const DrawingSession: React.FC<DrawingSessionProps> = ({ template, onClos
         <DrawingCanvas 
           steps={template.steps} 
           currentStepIndex={currentStepIndex} 
+          zoom={zoom}
         />
       </main>
 
