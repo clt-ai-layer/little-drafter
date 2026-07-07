@@ -113,18 +113,37 @@ export const DrawingSession: React.FC<DrawingSessionProps> = ({ template, onClos
       </header>
 
       {/* Main Drawing Area */}
-      <main className="flex-1 flex flex-col items-center">
-        <div className="w-full max-w-4xl p-4 text-center h-20 flex items-center justify-center">
-          <p className="text-xl font-medium text-blue-600 animate-bounce">
-            {template.steps[currentStepIndex]?.instruction || 'Loading...'}
-          </p>
+      <main className="flex-1 flex flex-row overflow-hidden">
+        {/* Active Drawing (2/3 width) */}
+        <div className="w-2/3 flex flex-col items-center border-r-2 border-gray-100 relative">
+          <div className="w-full p-4 text-center h-24 flex items-center justify-center bg-white z-10 shadow-sm border-b border-gray-50">
+            <p className="text-2xl font-bold text-blue-600 animate-pulse">
+              {template.steps[currentStepIndex]?.instruction || 'Loading...'}
+            </p>
+          </div>
+          
+          <DrawingCanvas 
+            steps={template.steps} 
+            currentStepIndex={currentStepIndex} 
+            zoom={zoom}
+          />
         </div>
-        
-        <DrawingCanvas 
-          steps={template.steps} 
-          currentStepIndex={currentStepIndex} 
-          zoom={zoom}
-        />
+
+        {/* Target Drawing (1/3 width) */}
+        <div className="w-1/3 flex flex-col items-center bg-gray-50 relative">
+          <div className="w-full p-4 text-center h-24 flex items-center justify-center bg-gray-100 border-b-2 border-gray-200 z-10 shadow-sm">
+            <h3 className="text-xl font-bold text-gray-500 uppercase tracking-wider">
+              Modèle
+            </h3>
+          </div>
+          
+          <DrawingCanvas 
+            steps={template.steps} 
+            currentStepIndex={template.steps.length - 1} 
+            zoom={0.4} // Fixed smaller zoom for the target preview
+            isTarget={true}
+          />
+        </div>
       </main>
 
       {/* Bottom Navigation */}

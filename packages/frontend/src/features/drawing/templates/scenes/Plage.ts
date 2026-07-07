@@ -30,6 +30,7 @@ export const PLAGE_TEMPLATE: Template = {
     { index: 22, pathData: '<rect x="250" y="220" width="30" height="60" fill="#ffb300" stroke="none" style="mix-blend-mode: multiply" />', instruction: 'Puis la tour droite.' },
     { index: 23, pathData: '<path d="M 260 120 A 60 60 0 0 1 380 120 Z" fill="#f44336" stroke="none" style="mix-blend-mode: multiply" />', instruction: 'Colorie le parasol en rouge vif !' },
     { index: 24, pathData: '<path d="M 50 320 L 70 370 L 110 370 L 130 320 Z" fill="#4caf50" stroke="none" style="mix-blend-mode: multiply" />', instruction: 'Colorie le seau en vert pomme.' },
-    { index: 25, pathData: '<circle cx="60" cy="60" r="30" fill="#ffeb3b" stroke="none" style="mix-blend-mode: multiply" />', instruction: 'Et le soleil bien jaune qui brille fort !' }
+    { index: 25, pathData: '<circle cx="60" cy="60" r="30" fill="#ffeb3b" stroke="none" style="mix-blend-mode: multiply" />', instruction: 'Et le soleil bien jaune qui brille fort !' },
+    { index: 26, pathData: '<style>@keyframes sun-spin { from { transform: rotate(0deg) scale(1); } to { transform: rotate(360deg) scale(1.1); } } @keyframes wave-bob { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } } circle[cx="60"] { transform-origin: 60px 60px; animation: sun-spin 4s ease-in-out infinite alternate; } path[fill="#2196f3"], path[d="M 0 200 L 400 200"], path[d="M 0 280 Q 200 250 400 300"] { animation: wave-bob 4s ease-in-out infinite; }</style>', instruction: 'Bravo ! Regarde la plage s\'animer !' }
   ]
 };
