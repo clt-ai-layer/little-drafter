@@ -61,7 +61,26 @@ export { SOUS_MARIN_TEMPLATE } from './vehicules/SousMarin';
 export { TRACTEUR_TEMPLATE } from './vehicules/Tracteur';
 export { TRAIN_TEMPLATE } from './vehicules/Train';
 export { VOITURE_DE_SPORT_TEMPLATE } from './vehicules/VoitureDeSport';
-
+export { AEROPORT_TEMPLATE } from './scenes/Aeroport';
+export { BANQUISE_TEMPLATE } from './scenes/Banquise';
+export { CHANTIER_TEMPLATE } from './scenes/Chantier';
+export { CIEL_NOCTURNE_TEMPLATE } from './scenes/CielNocturne';
+export { ESPACE_TEMPLATE } from './scenes/Espace';
+export { FERME_TEMPLATE } from './scenes/Ferme';
+export { FOND_MARIN_TEMPLATE } from './scenes/FondMarin';
+export { FORET_TEMPLATE } from './scenes/Foret';
+export { GARE_TEMPLATE } from './scenes/Gare';
+export { GROTTE_TEMPLATE } from './scenes/Grotte';
+export { HIVER_TEMPLATE } from './scenes/Hiver';
+export { JARDIN_FEERIQUE_TEMPLATE } from './scenes/JardinFeerique';
+export { JURASSIQUE_TEMPLATE } from './scenes/Jurassique';
+export { MONTAGNE_TEMPLATE } from './scenes/Montagne';
+export { PARC_TEMPLATE } from './scenes/Parc';
+export { PIQUE_NIQUE_TEMPLATE } from './scenes/PiqueNique';
+export { PLAGE_TEMPLATE } from './scenes/Plage';
+export { PRAIRIE_TEMPLATE } from './scenes/Prairie';
+export { ROYAUME_MAGIQUE_TEMPLATE } from './scenes/RoyaumeMagique';
+export { VILLE_TEMPLATE } from './scenes/Ville';
 import { CHIEN_TEMPLATE } from './animaux/Chien';
 import { ELEPHANT_TEMPLATE } from './animaux/Elephant';
 import { GIRAFE_TEMPLATE } from './animaux/Girafe';
@@ -112,6 +131,26 @@ import { SOUS_MARIN_TEMPLATE } from './vehicules/SousMarin';
 import { TRACTEUR_TEMPLATE } from './vehicules/Tracteur';
 import { TRAIN_TEMPLATE } from './vehicules/Train';
 import { VOITURE_DE_SPORT_TEMPLATE } from './vehicules/VoitureDeSport';
+import { AEROPORT_TEMPLATE } from './scenes/Aeroport';
+import { BANQUISE_TEMPLATE } from './scenes/Banquise';
+import { CHANTIER_TEMPLATE } from './scenes/Chantier';
+import { CIEL_NOCTURNE_TEMPLATE } from './scenes/CielNocturne';
+import { ESPACE_TEMPLATE } from './scenes/Espace';
+import { FERME_TEMPLATE } from './scenes/Ferme';
+import { FOND_MARIN_TEMPLATE } from './scenes/FondMarin';
+import { FORET_TEMPLATE } from './scenes/Foret';
+import { GARE_TEMPLATE } from './scenes/Gare';
+import { GROTTE_TEMPLATE } from './scenes/Grotte';
+import { HIVER_TEMPLATE } from './scenes/Hiver';
+import { JARDIN_FEERIQUE_TEMPLATE } from './scenes/JardinFeerique';
+import { JURASSIQUE_TEMPLATE } from './scenes/Jurassique';
+import { MONTAGNE_TEMPLATE } from './scenes/Montagne';
+import { PARC_TEMPLATE } from './scenes/Parc';
+import { PIQUE_NIQUE_TEMPLATE } from './scenes/PiqueNique';
+import { PLAGE_TEMPLATE } from './scenes/Plage';
+import { PRAIRIE_TEMPLATE } from './scenes/Prairie';
+import { ROYAUME_MAGIQUE_TEMPLATE } from './scenes/RoyaumeMagique';
+import { VILLE_TEMPLATE } from './scenes/Ville';
 
 export const TEMPLATES: Template[] = [
   CHIEN_TEMPLATE,
@@ -163,5 +202,25 @@ export const TEMPLATES: Template[] = [
   SOUS_MARIN_TEMPLATE,
   TRACTEUR_TEMPLATE,
   TRAIN_TEMPLATE,
-  VOITURE_DE_SPORT_TEMPLATE
+  VOITURE_DE_SPORT_TEMPLATE,
+  AEROPORT_TEMPLATE,
+  BANQUISE_TEMPLATE,
+  CHANTIER_TEMPLATE,
+  CIEL_NOCTURNE_TEMPLATE,
+  ESPACE_TEMPLATE,
+  FERME_TEMPLATE,
+  FOND_MARIN_TEMPLATE,
+  FORET_TEMPLATE,
+  GARE_TEMPLATE,
+  GROTTE_TEMPLATE,
+  HIVER_TEMPLATE,
+  JARDIN_FEERIQUE_TEMPLATE,
+  JURASSIQUE_TEMPLATE,
+  MONTAGNE_TEMPLATE,
+  PARC_TEMPLATE,
+  PIQUE_NIQUE_TEMPLATE,
+  PLAGE_TEMPLATE,
+  PRAIRIE_TEMPLATE,
+  ROYAUME_MAGIQUE_TEMPLATE,
+  VILLE_TEMPLATE
 ];
