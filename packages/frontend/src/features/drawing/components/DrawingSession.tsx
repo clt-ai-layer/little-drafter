@@ -65,6 +65,16 @@ export const DrawingSession: React.FC<DrawingSessionProps> = ({ template, onClos
   const handleZoomIn = () => setZoom(z => Math.min(z + 0.1, 2.0));
   const handleZoomOut = () => setZoom(z => Math.max(z - 0.1, 0.2));
 
+  // Determine the final step for the target view, skipping any animation blocks so they don't leak globally
+  const targetStepIndex = React.useMemo(() => {
+    const styleIndex = template.steps.findIndex(s => {
+      // @ts-ignore - support multiple property names across templates
+      const html = s.pathData || s.svgPath || s.svg || '';
+      return html.includes('<style>');
+    });
+    return styleIndex !== -1 ? styleIndex - 1 : template.steps.length - 1;
+  }, [template.steps]);
+
   return (
     <div className="flex flex-col h-screen bg-white relative">
       {/* Completion Overlay */}
@@ -139,7 +149,7 @@ export const DrawingSession: React.FC<DrawingSessionProps> = ({ template, onClos
           
           <DrawingCanvas 
             steps={template.steps} 
-            currentStepIndex={template.steps.length - 1} 
+            currentStepIndex={targetStepIndex} 
             zoom={0.4} // Fixed smaller zoom for the target preview
             isTarget={true}
           />
