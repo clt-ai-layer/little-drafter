@@ -1,0 +1,31 @@
+{
+  "name": "@little-drafter/backend",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "description": "Little Drafter backend",
+  "imports": {
+    "@src/*": "./src/*.js"
+  },
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "test": "vitest run",
+    "test:json": "vitest run --reporter=json"
+  },
+  "dependencies": {
+    "@event-driven-io/emmett": "0.42.3",
+    "@event-driven-io/emmett-expressjs": "0.42.3",
+    "@event-driven-io/emmett-mongodb": "0.42.3",
+    "express": "^4.21.2",
+    "mongodb": "^6.12.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.9"
+  }
+}
