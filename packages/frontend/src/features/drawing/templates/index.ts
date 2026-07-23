@@ -12,6 +12,7 @@ export interface Template {
 }
 
 export { CHIEN_TEMPLATE } from './animaux/Chien';
+export { CIGOGNE_TEMPLATE } from './animaux/Cigogne';
 export { ELEPHANT_TEMPLATE } from './animaux/Elephant';
 export { GIRAFE_TEMPLATE } from './animaux/Girafe';
 export { GRENOUILLE_TEMPLATE } from './animaux/Grenouille';
@@ -82,6 +83,7 @@ export { PRAIRIE_TEMPLATE } from './scenes/Prairie';
 export { ROYAUME_MAGIQUE_TEMPLATE } from './scenes/RoyaumeMagique';
 export { VILLE_TEMPLATE } from './scenes/Ville';
 import { CHIEN_TEMPLATE } from './animaux/Chien';
+import { CIGOGNE_TEMPLATE } from './animaux/Cigogne';
 import { ELEPHANT_TEMPLATE } from './animaux/Elephant';
 import { GIRAFE_TEMPLATE } from './animaux/Girafe';
 import { GRENOUILLE_TEMPLATE } from './animaux/Grenouille';
@@ -154,6 +156,7 @@ import { VILLE_TEMPLATE } from './scenes/Ville';
 
 export const TEMPLATES: Template[] = [
   CHIEN_TEMPLATE,
+  CIGOGNE_TEMPLATE,
   ELEPHANT_TEMPLATE,
   GIRAFE_TEMPLATE,
   GRENOUILLE_TEMPLATE,
